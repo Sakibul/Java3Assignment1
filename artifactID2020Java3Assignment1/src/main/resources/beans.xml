@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="studentBean01" class="thisispackagename.Student">
+		<constructor-arg type="int" name="stdid" value="50938"></constructor-arg>
+		<constructor-arg type="String" name="stdName" value="Sakibul Islam Khan"></constructor-arg>
+	</bean>
+	
+	<bean id="studentBean02" class="thisispackagename.Student">
+		<constructor-arg type="int" name="stdid" value="40349"></constructor-arg>
+		<constructor-arg type="String" name="stdName" value="Mohammad Amin Amani Farani	"></constructor-arg>
+	</bean>
+	
+	<bean id="teacherBean" class="thisispackagename.Teacher">
+	    <constructor-arg type="String" name="teacherName" value="Reza Shalchian"></constructor-arg>
+	    <!-- java.util.List -->
+        <property name="arrStudents">
+            <list>
+                <ref bean="studentBean01" />
+                <ref bean="studentBean02" />
+            </list>
+        </property>
+    </bean>
+
+</beans>
